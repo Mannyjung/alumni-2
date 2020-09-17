@@ -20,6 +20,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		//$this->load->view('form_menu');
+		$this->load->view('form_menu');
 	}
 }
