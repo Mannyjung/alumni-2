@@ -12,13 +12,11 @@ class Manage_alumni extends CI_Controller {
 	{
 		$this->load->view('form_regis');
 	}
-
-
 	public function reg_alumni(){
-		$config['upload_path'] = './img/';
-		$config['allowed_types'] = 'gif|jpg|png';
-		$data1 = $this->input->post('image');
-		$filename = $data1['file_name'];
+		// $config['upload_path'] = './img/';
+		// $config['allowed_types'] = 'gif|jpg|png';
+		// $data1 = $this->input->post('image');
+		// $filename = $data1['file_name'];
 		$data = array(
 			'a_id' => $this->input->post("a_id"),
 			'fname' => $this->input->post("fname"),
@@ -30,7 +28,7 @@ class Manage_alumni extends CI_Controller {
 			'face'=> $this->input->post("face"),
 			'email'=> $this->input->post("email"),
 			'password'=> $this->input->post("password"),
-			'image'=>$filename
+			// 'image'=>$filename
 		
 		);
 		$data2 = array(
@@ -57,7 +55,7 @@ class Manage_alumni extends CI_Controller {
 			'attend' => $this->input->post("attend"),
 			'finish' => $this->input->post("finish"),
 		);
-		
+
 		
 		
 		// if($this->input->post("a_id")!= "" && $this->input->post("fname")!== ""){

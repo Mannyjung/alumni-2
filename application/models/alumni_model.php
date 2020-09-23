@@ -30,7 +30,24 @@ class Alumni_model extends CI_Model
 	{
 		$this->db->insert('year', $data4);
 	}
+	function check_login($email,$password){
+		$sql = "SELECT * FROM `info` WHERE `email` = '" . $email . "' and`password` = '" . $password . "'";
+		$result = $this->db->query($sql);
+		if($result->result()){
+			$status = true;
+			
+		}else{
+			$status = false;
+			
+		}
+		echo $status;
+		// $rs = [
+		// 	'status' => $status,
+		// 	'data' => $result->result(),
+		// ];
+		// return $rs;
 
+	}
 
 	// function menu_delete($id){
 	// 	$this->db->where('menu_id', $id);

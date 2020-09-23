@@ -58,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <a class="nav-link" href="<?php echo base_url();?>index.php/welcome/regis">ลงทะเบียนศิษย์เก่า</a>
               </span>
             <span class="navbar-text">
-            <a class="nav-link" href="login.php">เข้าสู่ระบบ</a>
+            <a class="nav-link" href="<?php echo base_url();?>index.php/welcome/login">เข้าสู่ระบบ</a>
             </span>
           </div>
           </div>
