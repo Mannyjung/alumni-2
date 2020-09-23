@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Manage_menu extends CI_Controller {
+class Manage_alumni extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
@@ -10,11 +10,11 @@ class Manage_menu extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('form_menu');
+		$this->load->view('form_regis');
 	}
 
 
-	public function reg_menu(){
+	public function reg_alumni(){
 		$config['upload_path'] = './img/';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$data1 = $this->input->post('image');
