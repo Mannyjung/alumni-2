@@ -19,9 +19,9 @@
 <!--end-->
       </head>  
       <body>  
-             <!-- header -->
- <div align="center">
- <img src="photo/header1920px.png" width="100%">
+<!-- header -->
+<div align="center">
+ <img src="<?php echo base_url('img'); ?>/header1920px.png" width="100%">
  </div>
   <!-- header -->
  <!-- Nav -->
@@ -42,7 +42,7 @@
               <a class="nav-link" href="<?php echo base_url();?>index.php/welcome/regis">ลงทะเบียนศิษย์เก่า</a>
               </span>
             <span class="navbar-text">
-            <a class="nav-link" href="login.php">เข้าสู่ระบบ</a>
+            <a class="nav-link" href="<?php echo base_url();?>index.php/welcome/login">เข้าสู่ระบบ</a>
             </span>
           </div>
           </div>
@@ -55,12 +55,7 @@
   <!--menu-->
            <br />  
            <div class="container" style="width:500px;">  
-                <?php  
-                if(isset($message))  
-                {  
-                     echo '<label class="text-danger">'.$message.'</label>';  
-                }  
-                ?>  
+            
                 <br/><br/><h1 class="form-group" align="center"><u>เข้าสู่ระบบ</u></h1><br/><br/>
                 <form action="<?php echo site_url('mag_login/login');?>" class="form-group" method="post">  
                      <label>ชื่อผู้ใช้</label>  

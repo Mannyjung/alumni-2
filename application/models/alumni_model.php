@@ -33,14 +33,17 @@ class Alumni_model extends CI_Model
 	function check_login($email,$password){
 		$sql = "SELECT * FROM `info` WHERE `email` = '" . $email . "' and`password` = '" . $password . "'";
 		$result = $this->db->query($sql);
-		if($result->result()){
-			$status = true;
+
+		
+		
+		// if($result->result()){
+		// 	$status = true;
 			
-		}else{
-			$status = false;
+		// }else{
+		// 	$status = false;
 			
-		}
-		echo $status;
+		// }
+		// echo $status;
 		// $rs = [
 		// 	'status' => $status,
 		// 	'data' => $result->result(),

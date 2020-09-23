@@ -14,7 +14,12 @@ class Mag_login extends CI_Controller {
         if($this->input->post('login')){ 
             $email = $this->input->post("email");
             $password =$this->input->post("password");
-             $this->Alumni->check_login($email,$password);
+            $check = $this->Alumni->check_login($email,$password);
+            if($check->num_rows() > 0){
+                $data = $check->row_array();
+                $email =  $data['email'];
+                $password =  $data['password'];
+            }
         }
     } 
    
