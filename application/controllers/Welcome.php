@@ -20,7 +20,11 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('home');
+		$this->load->view('list'); //home
+		$this->load->database();
+		// $query['data'] = $this->db->get('info');
+		$query = $this->db->get('info')->result();
+		print_r($query);
 	}
 	
 	public function regis()
@@ -31,4 +35,9 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('login');
 	}
+	// public function login()
+	// {
+	// 	$this->load->view('login');
+	// }
+
 }

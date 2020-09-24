@@ -6,11 +6,11 @@ class Alumni_model extends CI_Model
 		parent::__construct();
 	}
 
-	// function getAllMenus(){
-	// 	$this->db->select('menu_id, menu_name, mcategory_id,mshop_id');
-	// 	$result = $this->db->get('menu');
-	// 	return $result;
-	// }
+	function showlist(){
+		$this->db->select('a_id');
+		$result = $this->db->get('info');
+		return $result;
+	}
 
 	function alumni_insert_info($data)
 	{
@@ -31,10 +31,25 @@ class Alumni_model extends CI_Model
 		$this->db->insert('year', $data4);
 	}
 	function check_login($email,$password){
-		$sql = "SELECT * FROM `info` WHERE `email` = '" . $email . "' and`password` = '" . $password . "'";
-		$result = $this->db->query($sql);
-
 		
+			$this->db->select('email,password');
+			$result = $this->db->get_where('info', array('email' => $email,'password' => $password));
+		
+			if($result == true){
+
+				$this->load->view('form_regis');
+			}else{
+				echo "error";
+			}
+				return $result;
+		}
+	// function getAllMenus(){
+	// 		$this->db->select('*');
+	// 		$result = $this->db->get('info');
+	// 		return $result;
+	// 	}
+		
+
 		
 		// if($result->result()){
 		// 	$status = true;
@@ -67,4 +82,4 @@ class Alumni_model extends CI_Model
 	// 	$this->db->where('menu_id', $menu_id);
 	// 	$this->db->update('menu', $data);
 	// }	
-}
+
