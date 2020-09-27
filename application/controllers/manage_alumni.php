@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Manage_menu extends CI_Controller {
+class Manage_alumni extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
@@ -29,7 +29,7 @@ class Manage_menu extends CI_Controller {
 			'tel'=> $this->input->post("tel"),
 			'face'=> $this->input->post("face"),
 			'email'=> $this->input->post("email"),
-			'password'=> $this->input->post("password"),
+			'password'=> $this->input->post("password")
 			// 'image'=>$filename
 		
 		);
@@ -41,7 +41,7 @@ class Manage_menu extends CI_Controller {
 			'Area-home' => $this->input->post("Area-home"),
 			'Sub-area-home' => $this->input->post("Sub-area-home"),
 			'Postal-Code-home' => $this->input->post("Postal-Code-home"),
-			'Tel-home' => $this->input->post("Tel-home"),
+			'Tel-home' => $this->input->post("Tel-home")
 		);
 		$data3 = array(
 			'Work-No' => $this->input->post("Work-No"),
@@ -51,11 +51,11 @@ class Manage_menu extends CI_Controller {
 			'Area-work' => $this->input->post("Area-work"),
 			'Sub-area-work' => $this->input->post("Sub-area-work"),
 			'Postal-Code-work' => $this->input->post("Postal-Code-work"),
-			'Tel-work' => $this->input->post("Tel-work"),
+			'Tel-work' => $this->input->post("Tel-work")
 		);
 		$data4 = array(
 			'attend' => $this->input->post("attend"),
-			'finish' => $this->input->post("finish"),
+			'finish' => $this->input->post("finish")
 		);
 		
 		
@@ -65,7 +65,7 @@ class Manage_menu extends CI_Controller {
 			$this->Alumni->alumni_insert_addrHome($data2);
 			$this->Alumni->alumni_insert_addrWork($data3);
 			$this->Alumni->alumni_insert_year($data4);
-
+			$this->load->view('login');
 			// $this->load->view('view_insert_successwithmenulink');
 		// }else {
 		// 	echo "ไม่สามารถลงทะเบียนได้";

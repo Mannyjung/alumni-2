@@ -78,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <p></p>
 <div class="container">
 
-  <form action="./index.php/manage_alumni/reg_alumni" method="post" enctype="multipart/form-data" >
+  <form action="<?php echo site_url('manage_alumni/reg_alumni');?>" method="post" enctype="multipart/form-data" >
         <div class="container" style="color: blue;">
           <h3>ข้อมูลส่วนตัว</h3>
         </div>
