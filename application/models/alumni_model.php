@@ -6,7 +6,8 @@ class Alumni_model extends CI_Model
 		parent::__construct();
 	}
 
-	function showlist(){
+	function showlist()
+	{
 		// $this->db->select('a_id','fname','lname','email');
 		$query = $this->db->get('info');
 		return $query->result();
@@ -14,7 +15,7 @@ class Alumni_model extends CI_Model
 
 	function alumni_insert_info($data)
 	{
-		
+
 		$this->db->insert('info', $data);
 	}
 
@@ -30,44 +31,53 @@ class Alumni_model extends CI_Model
 	{
 		$this->db->insert('year', $data4);
 	}
-	function check_login($email,$password){
-		
-			$this->db->select('email,password');
-			$result = $this->db->get_where('info', array('email' => $email,'password' => $password));
-		
-			if($result == true){
+	function check_login($email, $password)
+	{
+		// $this->db->select('email,password');
+		$this->db->where('email', $email);
+		$this->db->where('password', $password);
+		$result = $this->db->get('info');
+		$message = '';
 
-				$this->load->view('form_regis');
-			}else{
-				echo "error";
-			}
-				return $result;
+		if ($result->num_rows() > 0) {
+			$message = true;
+
+			// $this->load->view('list');
+
+		} else {
+			$message = false;
 		}
+		$data = array(
+			"message"=>$message,"data"=>$result->result()
 
-		
+		);
+		return $data;
+	}
+
+
 	// function getAllMenus(){
 	// 		$this->db->select('*');
 	// 		$result = $this->db->get('info');
 	// 		return $result;
 	// 	}
-		
 
-		
-		// if($result->result()){
-		// 	$status = true;
-			
-		// }else{
-		// 	$status = false;
-			
-		// }
-		// echo $status;
-		// $rs = [
-		// 	'status' => $status,
-		// 	'data' => $result->result(),
-		// ];
-		// return $rs;
 
-	}
+
+	// if($result->result()){
+	// 	$status = true;
+
+	// }else{
+	// 	$status = false;
+
+	// }
+	// echo $status;
+	// $rs = [
+	// 	'status' => $status,
+	// 	'data' => $result->result(),
+	// ];
+	// return $rs;
+
+}
 
 	// function menu_delete($id){
 	// 	$this->db->where('menu_id', $id);
@@ -84,4 +94,3 @@ class Alumni_model extends CI_Model
 	// 	$this->db->where('menu_id', $menu_id);
 	// 	$this->db->update('menu', $data);
 	// }	
-

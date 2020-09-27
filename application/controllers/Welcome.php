@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends CI_Controller {
 	function __construct(){
 		parent::__construct();
+		$this->load->library('session','database');
 		$this->load->model('alumni_model','Alumni');
 	}
 
@@ -31,6 +32,8 @@ class Welcome extends CI_Controller {
 	
 	public function regis()
 	{
+		$this->load->view('header');
+		$this->load->view('navbar');
 		$this->load->view('form_regis');
 	}
 	public function login()
@@ -39,7 +42,8 @@ class Welcome extends CI_Controller {
 	}
 	
 	public function show(){
-
+		$this->load->view('header');
+		$this->load->view('navbarlist');
 		$data['query']=$this->Alumni->showlist();
 		$this->load->view('list',$data);
 		// echo '<pre>';
