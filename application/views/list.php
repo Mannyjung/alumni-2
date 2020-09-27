@@ -69,44 +69,44 @@
     
   <!-- Nav -->
 
-  <div class="container">
-    <br><br><br>
+  
+    <br><br>
     <center>
       <h1>รายชื่อศิษย์เก่าทั้งหมด</h1>
     </center>
-    <br><br><br>
+    <br><br>
+
   
-    <?php
-	foreach($list->result_array() as $menu){
-
-		echo "<tr align=\"center\">";
-			
-			if($menu['mcategory_id']==1){
-				echo"<td> เครื่องดื่ม </td>";
-			}else if($menu['mcategory_id']==2){
-				echo"<td> อาหาร </td>";
-			}else {
-				echo"<td> ของหวาน </td>";
-			}
-			if($menu['mshop_id']==1){
-				echo"<td> U&ME </td>";
-			}else if($menu['mshop_id']==2){
-				echo"<td> Nine9 </td>";
-			}else {
-				echo"<td> Cafe Amazon NPRU </td>";
-			}
-
-		echo "</tr>";
-
-		}
-?>
-    
-    
   
-    <br><br><br> <br><br><br>
+    <br>
 
+<div class="container">
+<?php foreach($query as $rs) {?>
+ <div class="card w-75 h-100">
+ 
+        <div class="card-body">
+        
+          <div class="row">
 
+            <div class="col-4">
+              <img src="<?php echo base_url('upload'); ?>/<?php echo $rs->image; ?>" alt="" width="180px" height="180px">
+            </div>
 
+            <div class="col-8">
+              <h5 class="card-title">ชื่อ :<?php echo $rs->title; ?>  <?php echo $rs->fname; ?> <?php echo $rs->lname; ?></h5>
+              <p class="card-text">อีเมลล์ : <td><?php echo $rs->email; ?></td></p>
+              <p class="card-text">เฟสบุ๊ค : <td><?php echo $rs->face; ?></td></p>                       
+            </div>
+
+          </div> 
+
+        </div>
+  
+
+      </div>
+
+   <?php }?>   
+      </div>
 </body>
 
 </html>

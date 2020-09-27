@@ -73,10 +73,12 @@ class Manage_menu extends CI_Controller {
 		// }
 	}
 
+
+
 	// public function showall()
 	// {
-	// 	$result['menus'] = $this->Menu->getAllMenus();
-	// 	$this->load->view('view_menu',$result);
+	// 	$result['info'] = $this->Alumni->showlist();
+	// 	$this->load->view('list',$result);
 	// }
 
 

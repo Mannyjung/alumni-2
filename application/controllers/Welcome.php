@@ -2,6 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
+	function __construct(){
+		parent::__construct();
+		$this->load->model('alumni_model','Alumni');
+	}
 
 	/**
 	 * Index Page for this controller.
@@ -20,11 +24,9 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('list'); //home
-		$this->load->database();
-		// $query['data'] = $this->db->get('info');
-		$query = $this->db->get('info')->result();
-		print_r($query);
+
+		$this->load->view('home');//home
+
 	}
 	
 	public function regis()
@@ -35,9 +37,20 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('login');
 	}
-	// public function login()
-	// {
-	// 	$this->load->view('login');
-	// }
+	
+	public function show(){
+
+		$data['query']=$this->Alumni->showlist();
+		$this->load->view('list',$data);
+		// echo '<pre>';
+		// print_r($data);
+		// echo '</pre>';
+		// exit;
+		
+		// $this->load->database();
+		// $query['data'] = $this->db->get('info');
+		// $query = $this->db->get('info')->result();
+		// print_r($query);
+	}
 
 }

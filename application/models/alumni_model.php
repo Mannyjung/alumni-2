@@ -7,9 +7,9 @@ class Alumni_model extends CI_Model
 	}
 
 	function showlist(){
-		$this->db->select('a_id');
-		$result = $this->db->get('info');
-		return $result;
+		// $this->db->select('a_id','fname','lname','email');
+		$query = $this->db->get('info');
+		return $query->result();
 	}
 
 	function alumni_insert_info($data)
@@ -43,6 +43,8 @@ class Alumni_model extends CI_Model
 			}
 				return $result;
 		}
+
+		
 	// function getAllMenus(){
 	// 		$this->db->select('*');
 	// 		$result = $this->db->get('info');
