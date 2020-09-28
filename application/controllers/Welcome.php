@@ -1,11 +1,13 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
-	function __construct(){
+class Welcome extends CI_Controller
+{
+	function __construct()
+	{
 		parent::__construct();
-		$this->load->library('session','database');
-		$this->load->model('alumni_model','Alumni');
+		$this->load->library('session', 'database');
+		$this->load->model('alumni_model', 'Alumni');
 	}
 
 	/**
@@ -26,10 +28,10 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 
-		$this->load->view('home');//home
+		$this->load->view('home'); //home
 
 	}
-	
+
 	public function regis()
 	{
 		$this->load->view('header');
@@ -38,28 +40,24 @@ class Welcome extends CI_Controller {
 	}
 	public function login()
 	{
+		$this->load->view('header');
+		$this->load->view('navbar');
 		$this->load->view('login');
 	}
-	
-	public function show(){
-		// $this->load->view('header');
-		// $this->load->view('navbarlist');
-		$data['query']=$this->Alumni->showlist();
-		$this->load->view('list',$data);
-		// echo '<pre>';
-		// print_r($data);
-		// echo '</pre>';
-		// exit;
-		
-		// $this->load->database();
-		// $query['data'] = $this->db->get('info');
-		// $query = $this->db->get('info')->result();
-		// print_r($query);
-	}
-	public function logout(){
+
+	// public function show()
+	// {
+	// 	$this->load->view('header');
+	// 	$this->load->view('navbarlist');
+	// 	$data['query'] = $this->Alumni->showlist();
+	// 	$this->load->view('list', $data);
+	// }
+	public function logout()
+	{
+		$this->load->view('header');
+        $this->load->view('navbar');
 		$data = $this->session->all_userdata();
 		$this->session->unset_userdata($data);
 		$this->load->view('login');
 	}
-
 }

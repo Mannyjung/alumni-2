@@ -15,21 +15,24 @@ class Mag_login extends CI_Controller
         $this->load->view('login');
     }
     public function login()
+
     {
+       
         if ($this->input->post('login')) {
             $email = $this->input->post('email');
             $password = $this->input->post('password');
             $check = $this->Alumni->check_login($email, $password);
-            // print_r($check);
-            // echo $check['message'];
+          
             if ($check['message'] == true) {
                 $array = json_decode(json_encode($check['data']), true);
                 $this->session->set_userdata($array[0]);
                 $data['query'] = $this->Alumni->showlist();
-                $this->load->view('list',$data);
-                // print_r($array[0]);
+                $this->load->view('header');
+                $this->load->view('navbarlist');
+                $this->load->view('list', $data);
                
-      
+
+
             } else {
                 $this->load->view('login');
             }
