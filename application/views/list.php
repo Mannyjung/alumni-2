@@ -37,23 +37,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 
 <body>
-  <!-- header -->
- <div align="center">
- <img src="<?php echo base_url('img'); ?>/header1920px.png" width="100%">
- </div>
-  <!-- header -->
-
-
-
-  
-  
     <br><br>
     <center>
       <h1>รายชื่อศิษย์เก่าทั้งหมด</h1>
     </center>
     <br><br>
 
-  
+    <a href="<?php echo base_url();?>index.php/welcome/logout">logout</a>
   
     <br>
 

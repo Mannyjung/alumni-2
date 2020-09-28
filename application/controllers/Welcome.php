@@ -42,8 +42,8 @@ class Welcome extends CI_Controller {
 	}
 	
 	public function show(){
-		$this->load->view('header');
-		$this->load->view('navbarlist');
+		// $this->load->view('header');
+		// $this->load->view('navbarlist');
 		$data['query']=$this->Alumni->showlist();
 		$this->load->view('list',$data);
 		// echo '<pre>';
@@ -55,6 +55,11 @@ class Welcome extends CI_Controller {
 		// $query['data'] = $this->db->get('info');
 		// $query = $this->db->get('info')->result();
 		// print_r($query);
+	}
+	public function logout(){
+		$data = $this->session->all_userdata();
+		$this->session->unset_userdata($data);
+		$this->load->view('login');
 	}
 
 }

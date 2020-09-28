@@ -15,6 +15,9 @@
             <span class="navbar-text">
            <p><?php echo $this->session->userdata('title').' '.$this->session->userdata('fname').' '.$this->session->userdata('lname'); ?></p>
             </span>
+            <span class="navbar-text">
+           <a href="<?php echo base_url();?>index.php/welcome/logout ?>">logout</a>
+            </span>
           </div>
           </div>
         </nav>
