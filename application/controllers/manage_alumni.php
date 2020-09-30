@@ -5,6 +5,7 @@ class Manage_alumni extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
+	
 		$this->load->model('alumni_model','Alumni');
 	}
 

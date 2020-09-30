@@ -6,6 +6,9 @@ class Welcome extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->view('header');
+		$this->load->view('navbar');
+		$this->load->view('bt');
 		$this->load->library('session', 'database');
 		$this->load->model('alumni_model', 'Alumni');
 	}
@@ -34,16 +37,22 @@ class Welcome extends CI_Controller
 
 	public function regis()
 	{
-		$this->load->view('header');
-		$this->load->view('navbar');
+		
 		$this->load->view('form_regis');
 	}
 	public function login()
 	{
-		$this->load->view('header');
-		$this->load->view('navbar');
+		
 		$this->load->view('login');
 	}
+	public function profile()
+	{
+		
+		$this->load->view('profile');
+		
+	}
+
+
 
 	// public function show()
 	// {
@@ -52,12 +61,5 @@ class Welcome extends CI_Controller
 	// 	$data['query'] = $this->Alumni->showlist();
 	// 	$this->load->view('list', $data);
 	// }
-	public function logout()
-	{
-		$this->load->view('header');
-        $this->load->view('navbar');
-		$data = $this->session->all_userdata();
-		$this->session->unset_userdata($data);
-		$this->load->view('login');
-	}
+
 }

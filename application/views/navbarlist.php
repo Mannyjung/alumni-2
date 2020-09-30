@@ -8,12 +8,13 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="<?php echo base_url(); ?>index.php/welcome/index">หน้าหลัก<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="<?php echo base_url(); ?>index.php/welcome/index">ดูหลายชื่อศิษย์เก่า<span class="sr-only">(current)</span></a>
         </li>
       </ul>
 
       <span class="navbar-text">
-        <p><?php echo $this->session->userdata('title') . ' ' . $this->session->userdata('fname') . ' ' . $this->session->userdata('lname'); ?><a href="<?php echo base_url(); ?>index.php/welcome/logout">logout</a></p>
+		<hr>
+        <p><?php  echo $this->session->userdata('fname')?> <?php nbs(5) ?> <a href="<?php echo base_url(); ?>index.php/mag_login/logout">logout</a></p>
       </span>
     </div>
   </div>
