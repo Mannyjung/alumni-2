@@ -38,4 +38,14 @@ class Mag_login extends CI_Controller
             }
         }
     }
+    public function list()
+    {
+       
+        $data['query'] = $this->Alumni->showlist();
+        $this->load->view('header');
+        $this->load->view('navbarlist');
+        $this->load->view('list', $data);
+       
+    }
+
 }

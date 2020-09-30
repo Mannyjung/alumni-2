@@ -60,4 +60,10 @@ class Welcome extends CI_Controller
 		$this->session->unset_userdata($data);
 		$this->load->view('login');
 	}
+	public function info()
+	{
+		$this->load->view('header');
+		$this->load->view('navbarlist');
+		$this->load->view('info');
+	}
 }
