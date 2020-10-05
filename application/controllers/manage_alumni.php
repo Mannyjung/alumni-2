@@ -67,6 +67,7 @@ class Manage_alumni extends CI_Controller {
 			$this->Alumni->alumni_insert_addrWork($data3);
 			$this->Alumni->alumni_insert_year($data4);
 			$this->load->view('login');
+			$this->load->view('footer');
 			// $this->load->view('view_insert_successwithmenulink');
 		// }else {
 		// 	echo "ไม่สามารถลงทะเบียนได้";

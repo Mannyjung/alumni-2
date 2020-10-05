@@ -48,6 +48,7 @@ class Mag_login extends CI_Controller
     {
         $data['query'] = $this->Alumni->showlist();
         $this->load->view('list', $data);
+        $this->load->view('footer');
        
     }
 }
