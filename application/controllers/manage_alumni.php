@@ -75,24 +75,34 @@ class Manage_alumni extends CI_Controller {
 	}
 
 
-
-	// public function showall()
-	// {
-	// 	$result['info'] = $this->Alumni->showlist();
-	// 	$this->load->view('list',$result);
-	// }
-
-
-	// public function delete_menu()
-	// {
-	// 	$delete_mid = $this->input->get("del_id");
-	// 	//echo $delete_mid;
-	// 	$this->Menu->menu_delete($delete_mid);
-	// 	echo "<center>";
-	// 	echo "ลบเมนู รหัส ".$delete_mid." เรียบร้อยแล้ว";
-	// 	$this->load->view('view_show_menulink');
-	// }
-
+	public function edit_alumni(){
+		// $config['upload_path'] = './img/';
+		// $config['allowed_types'] = 'gif|jpg|png';
+		// $data1 = $this->input->post('image');
+		// $filename = $data1['file_name'];
+		$data = array(
+			
+			'fname' => $this->input->post("fname"),
+			'lname' => $this->input->post("lname"),
+			'idcard'=> $this->input->post("idcard"),
+			'date'=> $this->input->post("date"),
+			'job'=> $this->input->post("job"),
+			'tel'=> $this->input->post("tel"),
+			'face'=> $this->input->post("face"),
+			'email'=> $this->input->post("email"),
+			'password'=> $this->input->post("password")
+			// 'image'=>$filename
+		
+		
+		);
+		
+	   
+		$a_id= $this->input->post("a_id");
+		$this->session->set_userdata($data);
+		$this->Alumni->alumni_update_info($data,$a_id);
+		redirect('Welcome/profile');
+	}
+	
 	// public function edit_menu()
 	// {
 	// 	$edit_mid = $this->input->get("edit_id");

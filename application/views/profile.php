@@ -40,7 +40,7 @@
             <p class="card-text">งาน : <?php echo $this->session->userdata('job'); ?></p>
             <p class="card-text">เบอร์โทรศัพท์ : <?php echo $this->session->userdata('tel'); ?></p>
         
-
+            <a class="nav-link " href=" <?php echo site_url('Welcome/editprofile'); ?>">แก้ไข</a>
      
 
           

@@ -31,10 +31,11 @@ class Mag_login extends CI_Controller
                 $array = json_decode(json_encode($check['data']), true);
                 $this->session->set_userdata($array[0]);
                 $data['query'] = $this->Alumni->showlist();
-                $this->load->view('list', $data);
+                redirect('mag_login/list',$data);
+                // $this->load->view('list', $data);
                 // print_r($this->session);
             } else {
-                $this->load->view('login');
+                redirect('mag_login/index');
             }
         }
     }
@@ -42,7 +43,8 @@ class Mag_login extends CI_Controller
     {
         $this->session->sess_destroy();
         // $this->session->unset_userdata($data);
-        $this->load->view('login');
+        // $this->load->view('login');
+        redirect('mag_login/index');
     }
     public function list()
     {

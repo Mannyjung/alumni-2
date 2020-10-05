@@ -54,7 +54,10 @@ class Alumni_model extends CI_Model
 		return $data;
 	}
 
-
+  function alumni_update_info($data,$a_id){
+	$this->db->where('a_id', $a_id);
+	$this->db->update('info', $data);
+  }
 	// function getAllMenus(){
 	// 		$this->db->select('*');
 	// 		$result = $this->db->get('info');

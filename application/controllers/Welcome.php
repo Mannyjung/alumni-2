@@ -12,7 +12,13 @@ class Welcome extends CI_Controller
 		$this->load->library('session', 'database');
 		$this->load->model('alumni_model', 'Alumni');
 	}
-
+	public function editprofile(){
+		// $get_id = $this->input->get("user_id");
+		// $select_user['user_select'] = $this->crud->data_users($get_id);
+	
+		// $this->load->view('edit', $select_user);
+		$this->load->view('editprofile');
+	}
 	/**
 	 * Index Page for this controller.
 	 *
