@@ -6,12 +6,7 @@ class Alumni_model extends CI_Model
 		parent::__construct();
 	}
 
-	function showlist()
-	{
-		// $this->db->select('a_id','fname','lname','email');
-		$query = $this->db->get('info');
-		return $query->result();
-	}
+
 
 	function alumni_insert_info($data)
 	{
@@ -58,11 +53,38 @@ class Alumni_model extends CI_Model
 	$this->db->where('a_id', $a_id);
 	$this->db->update('info', $data);
   }
-	// function getAllMenus(){
-	// 		$this->db->select('*');
-	// 		$result = $this->db->get('info');
-	// 		return $result;
-	// 	}
+
+
+	function showone($a_id)
+	{
+		$result =	$this->db->select('*')
+			->from('info')
+			->join('year','year.a_id = info.a_id')
+			->where('info.a_id',$a_id)
+			->get();
+			return $result;
+
+			
+		}
+	function showlist()
+	{
+		$query = $this->db->get('info');
+		return $query->result();
+	}
+	function showlist1()
+	{
+		$query1 = $this->db->get('year');
+		return $query1;
+	}
+	function show1()
+	{
+		$result =	$this->db->select('*')
+			->from('info')
+			->join('year','year.a_id = info.a_id')
+			->where('info.a_id=year.a_id')
+			->get();
+			return $result;	
+			}
 
 
 

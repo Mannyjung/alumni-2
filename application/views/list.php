@@ -37,9 +37,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
   </center>
   <br><br>
 
-  <!-- <a href="<?php echo base_url(); ?>index.php/welcome/logout">logout</a> -->
+  
 
-  <br>
 
   <div class="container">
     <?php foreach ($query as $rs) { ?>
@@ -55,10 +54,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
             <div class="col-8">
               <h5 class="card-title">ชื่อ :<?php echo $rs->title; ?> <?php echo $rs->fname; ?> <?php echo $rs->lname; ?></h5>
-              <p class="card-text">อีเมลล์ : <td><?php echo $rs->email; ?></td>
-              </p>
-              <p class="card-text">เฟสบุ๊ค : <td><?php echo $rs->face; ?></td>
-              </p>
+              <p class="card-text">อีเมลล์ : <td><?php echo $rs->email; ?> </p>
+              <p class="card-text">เฟสบุ๊ค : <td><?php echo $rs->face; ?></p>
+              <p class="card-text">วันเกิด : <td><?php echo $rs->date; ?></p>
+              
             </div>
 
           </div>

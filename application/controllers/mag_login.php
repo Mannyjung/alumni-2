@@ -17,6 +17,7 @@ class Mag_login extends CI_Controller
     public function index()
     {
         $this->load->view('login');
+        $this->load->view('footer');
     }
     public function login()
 
@@ -36,6 +37,7 @@ class Mag_login extends CI_Controller
                 // print_r($this->session);
             } else {
                 redirect('mag_login/index');
+                
             }
         }
     }
@@ -45,11 +47,16 @@ class Mag_login extends CI_Controller
         // $this->session->unset_userdata($data);
         // $this->load->view('login');
         redirect('mag_login/index');
+      
     }
     public function list()
     {
+        
         $data['query'] = $this->Alumni->showlist();
-        $this->load->view('list', $data);
+        $data['query1'] = $this->Alumni->showlist1();
+        // print_r($data);
+        $this->load->view('list',$data);
+        $this->load->view('footer');
        
     }
 }

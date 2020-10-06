@@ -19,44 +19,33 @@ class Welcome extends CI_Controller
 		// $this->load->view('edit', $select_user);
 		$this->load->view('editprofile');
 	}
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
 
 		$this->load->view('home'); //home
-
+		$this->load->view('footer');
 	}
 
 	public function regis()
 	{
 		
 		$this->load->view('form_regis');
+		$this->load->view('footer');
 	}
 	public function login()
 	{
 		
 		$this->load->view('login');
+		$this->load->view('footer');
 	}
 	public function profile()
 	{
+		$a_id = $this->session->userdata('a_id');
+		$data['query'] =$this->Alumni->showone($a_id);
 		
-		$this->load->view('profile');
-		
-	}
+		$this->load->view('profile',$data);	
+		$this->load->view('footer');
+}
 
 
 

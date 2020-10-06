@@ -26,11 +26,11 @@
     <div class="card w-75">
       <div class="card-body">
         <div class="row">
+        
           <div class="col-4">
             <img src="<?php echo base_url('upload'); ?>/<?php echo $this->session->userdata('image'); ?>" alt="" width="180px" height="180px">
           </div>
           <div class="col-8">
-
             <h5 class="card-title">ชื่อ :<?php echo $this->session->userdata('title') . ' ' . $this->session->userdata('fname') . ' ' . $this->session->userdata('lname'); ?> </h5>
             <p class="card-text">อีเมลล์ : <?php echo $this->session->userdata('email'); ?></p>
             <p class="card-text">เฟสบุ๊ค : <?php echo $this->session->userdata('face'); ?></p>
@@ -39,17 +39,23 @@
             <p class="card-text">เลขบัตรประชาชน : <?php echo $this->session->userdata('idcard'); ?></p>
             <p class="card-text">งาน : <?php echo $this->session->userdata('job'); ?></p>
             <p class="card-text">เบอร์โทรศัพท์ : <?php echo $this->session->userdata('tel'); ?></p>
-        
-            <a class="nav-link " href=" <?php echo site_url('Welcome/editprofile'); ?>">แก้ไข</a>
-     
+            <?php foreach ($query->result_array() as $rs) { ?>
+            <p class="card-text">ปีที่เข้ารับการศึกษา : <td><?php echo $rs['attend']; ?></p>
+            <p class="card-text">ปีเข้าที่จบการศึกษา : <td><?php echo $rs['finish']; ?></p>
+            <?php } ?>
+        <div align="right">
+            <a class="btn btn-secondary" href=" <?php echo site_url('Welcome/editprofile'); ?>">แก้ไข</a>
+     </div>
 
           
           </div>
+     
         </div>
       </div>
     </div>
 
 
+    </div>
 
 
 
