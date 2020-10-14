@@ -47,8 +47,6 @@ class Welcome extends CI_Controller
 		$this->load->view('footer');
 }
 
-
-
 	// public function show()
 	// {
 	// 	$this->load->view('header');

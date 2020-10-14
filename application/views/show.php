@@ -15,7 +15,7 @@
           <div class="row">
 
             <div class="col-4">
-              <img src="<?php echo base_url('upload'); ?>/<?php echo $rs->image; ?>" alt="" width="180px" height="180px">
+              <img src="<?php echo base_url('upload'); ?>/<?php echo $rs->image; ?>" alt="" width="200px" height="180px">
             </div>
 
             <div class="col-8">
@@ -24,6 +24,7 @@
               </p>
               <p class="card-text">เฟสบุ๊ค : <td><?php echo $rs->face; ?></td>
               </p>
+              <p class="card-text">วันเกิด : <td><?php echo $rs->date; ?></p>
             </div>
 
           </div>

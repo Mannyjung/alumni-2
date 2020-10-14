@@ -31,7 +31,6 @@ class Manage_alumni extends CI_Controller {
 			'face'=> $this->input->post("face"),
 			'email'=> $this->input->post("email"),
 			'password'=> $this->input->post("password")
-			// 'image'=>$filename
 		
 		);
 		$data2 = array(

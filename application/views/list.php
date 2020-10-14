@@ -49,7 +49,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <div class="row">
 
             <div class="col-4">
-              <img src="<?php echo base_url('upload'); ?>/<?php echo $rs->image; ?>" alt="" width="180px" height="180px">
+              <img src="<?php echo base_url('upload'); ?>/<?php echo $rs->image; ?>" alt="" width="180px" height="200px">
             </div>
 
             <div class="col-8">

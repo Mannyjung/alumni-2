@@ -78,13 +78,13 @@ class Alumni_model extends CI_Model
 	}
 	function show1()
 	{
-		$result =	$this->db->select('*')
+		$result =$this->db->select('*')
 			->from('info')
 			->join('year','year.a_id = info.a_id')
 			->where('info.a_id=year.a_id')
 			->get();
 			return $result;	
-			}
+	}
 
 
 
