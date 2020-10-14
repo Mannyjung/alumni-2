@@ -22,9 +22,11 @@ class Manage_alumni extends CI_Controller {
 		// $filename = $data1['file_name'];
 		$data = array(
 			'a_id' => $this->input->post("a_id"),
+			'title' => $this->input->post("title"),
 			'fname' => $this->input->post("fname"),
 			'lname' => $this->input->post("lname"),
 			'idcard'=> $this->input->post("idcard"),
+			'sex'=> $this->input->post("sex"),
 			'date'=> $this->input->post("date"),
 			'job'=> $this->input->post("job"),
 			'tel'=> $this->input->post("tel"),
@@ -65,7 +67,11 @@ class Manage_alumni extends CI_Controller {
 			$this->Alumni->alumni_insert_addrHome($data2);
 			$this->Alumni->alumni_insert_addrWork($data3);
 			$this->Alumni->alumni_insert_year($data4);
+			$this->load->view('header');
+			$this->load->view('navbar');
+			$this->load->view('bt');
 			$this->load->view('login');
+			$this->load->view('footer');
 			// $this->load->view('view_insert_successwithmenulink');
 		// }else {
 		// 	echo "ไม่สามารถลงทะเบียนได้";

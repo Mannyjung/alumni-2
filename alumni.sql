@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 04, 2020 at 05:04 AM
+-- Generation Time: Oct 14, 2020 at 02:33 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -105,10 +105,10 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`a_id`, `title`, `fname`, `lname`, `idcard`, `sex`, `date`, `job`, `tel`, `face`, `email`, `password`, `image`) VALUES
-(3, 'นาย', 'เมืองแมน', 'สระทองจีน', '', 'ชาย', '2000-03-31', 'นักศึกษา', '0972745063', 'Mannyjung', 'srathongjeenm@gmail.com', 'muangman63', '52635819_394390901339127_4717300806129287168_n.jpg'),
-(4, 'นาย', 'ศิวกร', 'รามเรือง', '', 'ชาย', '1999-07-07', 'นักศึกษา', '0993896785', 'Siwakorn Ram', 'siwa@gmail.com', '123456', 'jefferson-santos-450408-unsplash.jpg'),
-(5, 'นาย', 'ธนกต', 'ตินพ', '', 'ชาย', '2000-02-07', 'student', '0659216799', 'Thanakit', 'Thanakit@gmail.com', '123456', '46976009_1959044544192399_409518955510628352_o.jpg'),
-(6, 'นาย', 'เมืองแมน', 'สระทองจีน', '1730201354430', 'ชาย', '2000-03-31', 'student', '0972745063', 'Mannyjung', 'muangman.6336@gmail.com', '0925658330', '46976009_1959044544192399_409518955510628352_o.jpg');
+(3, 'นาย', 'เมืองแมน', 'สระทองจีน', '1730201354430', 'ชาย', '2000-03-31', 'นักศึกษา', '0972745063', 'Mannyjung', 'srathongjeenm@gmail.com', 'muangman63', '52635819_394390901339127_4717300806129287168_n.jpg'),
+(4, 'นาย', 'ศิวกร', 'รามเรือง', '1730215496354', 'ชาย', '1999-07-07', 'นักศึกษา', '0993896785', 'Siwakorn Ram', 'siwa@gmail.com', '123456', 'k1.jpg'),
+(5, 'นาย', 'ธนกต', 'ตินพ', '1302015697856', 'ชาย', '2000-02-07', 'student', '0659216799', 'Thanakit', 'Thanakit@gmail.com', '123456', '46976009_1959044544192399_409518955510628352_o.jpg'),
+(6, 'นาย', 'ธันวา', 'กุณทะมุณี', '1756302013628', 'ชาย', '2000-03-31', 'student', '0972745063', 'เจมส์ กุณทะมุณี', 'Tanva6@gmail.com', '123456', 'j1.jpg');
 
 -- --------------------------------------------------------
 
@@ -168,25 +168,25 @@ ALTER TABLE `year`
 -- AUTO_INCREMENT for table `addr_home`
 --
 ALTER TABLE `addr_home`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `addr_work`
 --
 ALTER TABLE `addr_work`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `info`
 --
 ALTER TABLE `info`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `year`
 --
 ALTER TABLE `year`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
