@@ -37,7 +37,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
   </center>
   <br><br>
 
-  
+
 
 
   <div class="container">
@@ -57,7 +57,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <p class="card-text">อีเมลล์ : <td><?php echo $rs->email; ?> </p>
               <p class="card-text">เฟสบุ๊ค : <td><?php echo $rs->face; ?></p>
               <p class="card-text">วันเกิด : <td><?php echo $rs->date; ?></p>
-              
+              <p class="card-text">เพศ : <td><?php echo $rs->sex; ?></p>
+              <?php if ($this->session->userdata('email')) { ?>
+                <form action="<?php echo base_url('index.php/info_c/info_list'); ?>" method="post">
+                  <input type="hidden" name="id" value="<?php echo $rs->a_id; ?>">
+                  <button class="btn btn-danger" name="submit">ดูรายละเอียอ</button>
+                </form>
+              <?php } else {
+              } ?>
             </div>
 
           </div>
