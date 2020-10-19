@@ -51,9 +51,7 @@ class Mag_login extends CI_Controller
     }
     public function list()
     {
-        
         $data['query'] = $this->Alumni->showlist();
-        $data['query1'] = $this->Alumni->showlist1();
         // print_r($data);
         $this->load->view('list',$data);
         $this->load->view('footer');

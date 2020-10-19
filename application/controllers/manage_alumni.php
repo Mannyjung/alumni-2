@@ -96,8 +96,6 @@ class Manage_alumni extends CI_Controller {
 			'face'=> $this->input->post("face"),
 			'email'=> $this->input->post("email"),
 			'password'=> $this->input->post("password")
-			// 'image'=>$filename
-		
 		
 		);
 		
@@ -107,28 +105,15 @@ class Manage_alumni extends CI_Controller {
 		$this->Alumni->alumni_update_info($data,$a_id);
 		redirect('Welcome/profile');
 	}
-	
-	// public function edit_menu()
-	// {
-	// 	$edit_mid = $this->input->get("edit_id");
-	// 	$menuselect['menu_select'] = $this->Menu->menu_edit($edit_mid);
-	// 	//echo $edit_mid;
-	// 	$this->load->view('view_menu_edit',$menuselect);
-	// }
+	public function listbef()
+    {
+		$data['query'] = $this->Alumni->showlist();
+		$this->load->view('header');
+        $this->load->view('navbar');
+        $this->load->view('bt');
+        $this->load->view('listbef',$data);
+        $this->load->view('footer');
+       
+    }
 
-	// public function update_menu()
-	// {
-	// 	$data = array(
-	// 		'menu_id' => $this->input->post("menu_id"),
-	// 		'menu_name' => $this->input->post("menu_name"),
-	// 		'mcategory_id' => $this->input->post("menu_ctype_id"),
-	// 		'mshop_id'=> $this->input->post("sh_menu_id"),
-	// 	);
-	// 	$menu_id = $this->input->post("menu_id");
-	// 	//echo $menu_id;
-	// 	$this->Menu->menu_update($data,$menu_id);
-	// 	echo "<center>";
-	// 	echo "อัพเดทเมนู รหัส ".$menu_id." เรียบร้อยแล้ว";
-	// 	$this->load->view('view_show_menulink');
-	// }
 }

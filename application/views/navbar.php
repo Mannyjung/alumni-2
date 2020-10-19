@@ -15,7 +15,10 @@
              <a class="nav-link" href="<?php echo base_url(); ?>index.php/mag_login/list"style="margin-top:6%;color:white;">รายชื่อศิษย์เก่า<span class="sr-only">(current)</span></a>
            </span>
          <?php } else { ?>
+      
            <a class="nav-link"  href="<?php echo site_url('Welcome/index') ?>"style="margin-top:6%;color:white;"><span><h4>หน้าแรก</h4></span></a>
+          <a class="nav-link" href="<?php echo base_url(); ?>index.php/manage_alumni/listbef"style="margin-top:6%;color:white;"><span><h4>รายชื่อศิษย์เก่า</h4></span></a>
+         
          <?php } ?>
        </ul>
        <?php if ($this->session->userdata('email')) { ?>
