@@ -131,7 +131,7 @@
 
             </div> -->
             <br> <br>
-<input type="hidden" name="a_id" value=" <?php echo $this->session->userdata('a_id'); ?>">
+                <input type="hidden" name="a_id" value="<?php echo $this->session->userdata('a_id'); ?>">
             <div class="container">
                 <div align="right">
                    <button type="submit" class="btn btn-primary">ยืนยัน</button>
