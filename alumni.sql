@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 26, 2020 at 11:51 AM
+-- Generation Time: Oct 26, 2020 at 02:54 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -52,7 +52,8 @@ INSERT INTO `addr_home` (`a_id`, `House-No`, `Moo-home`, `road-home`, `Province-
 (7, '52', '1', '-', 'นครปฐม', 'กำแพงแสน', 'กำแพงแสน', '73100', '0980733220'),
 (8, '52', '1', '-', 'นครปฐม', 'กำแพงแสน', 'กำแพงแสน', '73100', '0980733220'),
 (9, '25', '15', '-', 'ราชบุรี', 'เมือง', 'ดอนเร่', '70000', '0980754413'),
-(10, '25', '15', '-', 'ราชบุรี', 'เมือง', 'ดอนเร่', '70000', '0980754413');
+(10, '25', '15', '-', 'ราชบุรี', 'เมือง', 'ดอนเร่', '70000', '0980754413'),
+(11, '212', '12', '-', 'นครปฐม', 'ดอนตูม', 'สามง่าม', '73150', '0886408164');
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,8 @@ INSERT INTO `addr_work` (`a_id`, `Work-No`, `Moo-work`, `road-work`, `Province-w
 (7, '23', '3', '-', 'นครปฐม', 'เมือง', 'พระปฐม', '73000', '0985523263'),
 (8, '23', '3', '-', 'นครปฐม', 'เมือง', 'พระปฐม', '73000', '0985523263'),
 (9, '23', '3', '-', 'ราชบุรี', 'เมือง', 'ดอนเร่', '71000', '0985523263'),
-(10, '23', '3', '-', 'ราชบุรี', 'เมือง', 'ดอนเร่', '71000', '0985523263');
+(10, '23', '3', '-', 'ราชบุรี', 'เมือง', 'ดอนเร่', '71000', '0985523263'),
+(11, '151', '15', 'guita', 'huhi', 'saqa', 'wertui', '12345', '0123456789');
 
 -- --------------------------------------------------------
 
@@ -107,14 +109,14 @@ CREATE TABLE `info` (
   `face` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `image` varchar(155) NOT NULL
+  `upload` varchar(155) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `info`
 --
 
-INSERT INTO `info` (`a_id`, `title`, `fname`, `lname`, `idcard`, `idstd`, `sec`, `sex`, `date`, `job`, `tel`, `face`, `email`, `password`, `image`) VALUES
+INSERT INTO `info` (`a_id`, `title`, `fname`, `lname`, `idcard`, `idstd`, `sec`, `sex`, `date`, `job`, `tel`, `face`, `email`, `password`, `upload`) VALUES
 (3, 'นาย', 'เมืองแมน', 'สระทองจีน', '1730201354430', '614259041', '61/47', 'ชาย', '2000-03-31', 'นักศึกษา', '0972745063', 'Mannyjung Eiei', 'srathongjeenm@gmail.com', '123456', 'm1.jpg'),
 (4, 'นาย', 'ศิวกร', 'รามเรือง', '1730201230215', '614259048', '61/47', 'ชาย', '1999-07-07', 'นักศึกษา', '0993896785', 'Siwakorn Ram', 'siwa@gmail.com', '123456', 'k1.jpg'),
 (5, 'นาย', 'ธนกต', 'ตินพ', '1523023698745', '614259034', '61/47', 'ชาย', '2000-02-07', 'นักศึกษา', '0659216799', 'Thanakit', 'Thanakit@gmail.com', '123456', 't1.jpg'),
@@ -122,7 +124,8 @@ INSERT INTO `info` (`a_id`, `title`, `fname`, `lname`, `idcard`, `idstd`, `sec`,
 (7, 'นาย', 'ดิเรก', 'สุขสรร', '1300312363021', '614259033', '61/63', 'ชาย', '1999-12-03', 'Developer', '0952315630', 'Dirak suksas', 'Dirak@gmail.com', '123456', 'h1.jpg'),
 (8, 'นาย', 'ธนพล', 'ใจตรง', '1523021362533', '614259012', '61/58', 'ชาย', '1999-12-03', 'Developer', '0952315630', 'Thanaphon Jaitong', 'thanaphon6@gmail.com', '123456', 'q1.jpg'),
 (9, 'นางสาว', 'ศศิกา', 'กกทอง', '1300312465333', '551259033', '55/63', 'หญิง', '2002-11-21', 'นักศึกษา', '0952315454', 'Sasika Kokthong', 'sasika@gmail.com', '123456', 'g1.jpg'),
-(10, 'นางสาว', 'ณัฐณิชา', 'ปั่นเปี่ยมทอง', '1730236531563', '614259012', '61/47', 'หญิง', '1999-05-14', 'นักศึกษา', '0952315454', 'Natthanicha', 'nattha@gmail.com', '123456', 'to1.jpg');
+(10, 'นางสาว', 'ณัฐณิชา', 'ปั่นเปี่ยมทอง', '1730236531563', '614259012', '61/47', 'หญิง', '1999-05-14', 'นักศึกษา', '0952315454', 'Natthanicha', 'nattha@gmail.com', '123456', 'to1.jpg'),
+(11, 'นาย', 'ชวกรณ์', 'บัวแก้ว', '0341126512348', '614259026', '61/47', 'ชาย', '2020-10-26', 'นักศึกษา', '0992126344', 'Chawakorn', 'korn@gmail.com', '123456', 'b68547d8e4923a56bf4d76dcb392d872.jpg');
 
 -- --------------------------------------------------------
 
@@ -148,7 +151,8 @@ INSERT INTO `year` (`a_id`, `attend`, `finish`) VALUES
 (7, '2554', '2561'),
 (8, '2554', '2561'),
 (9, '2555', '2560'),
-(10, '2555', '2560');
+(10, '2555', '2560'),
+(11, '2554', '2560');
 
 --
 -- Indexes for dumped tables
@@ -186,25 +190,25 @@ ALTER TABLE `year`
 -- AUTO_INCREMENT for table `addr_home`
 --
 ALTER TABLE `addr_home`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `addr_work`
 --
 ALTER TABLE `addr_work`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `info`
 --
 ALTER TABLE `info`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `year`
 --
 ALTER TABLE `year`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
