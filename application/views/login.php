@@ -24,8 +24,8 @@
             
                 <br/><br/><h1 class="form-group" align="center"><u>เข้าสู่ระบบ</u></h1><br/><br/>
                 <form action="<?php echo site_url('mag_login/login');?>" class="form-group" method="post">  
-                     <label>ชื่อผู้ใช้</label>  
-                     <input type="email" name="email" class="form-control" placeholder="อีเมลล์"required />  
+                     <label>รหัสนักศึกษา</label>  
+                     <input type="text" name="idstd" class="form-control" placeholder="รหัสนักศึกษา"required />  
                      <br />  
                      <label>รหัสผ่านผู้ใช้</label>  
                      <input type="password" name="password" class="form-control"placeholder="รหัสผ่านผู้ใช้" required />  

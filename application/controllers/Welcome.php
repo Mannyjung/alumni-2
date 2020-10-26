@@ -15,9 +15,10 @@ class Welcome extends CI_Controller
 	public function editprofile(){
 		// $get_id = $this->input->get("user_id");
 		// $select_user['user_select'] = $this->crud->data_users($get_id);
-	
+		$a_id = $this->session->userdata('a_id');
+		$data['query'] =$this->Alumni->showone($a_id);
 		// $this->load->view('edit', $select_user);
-		$this->load->view('editprofile');
+		$this->load->view('editprofile',$data);
 	}
 	public function index()
 	{

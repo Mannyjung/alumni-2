@@ -66,11 +66,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <input type="text" class="form-control" id="lname" placeholder="นามสกุล(ภาษาไทย)" name="lname">
           </div>
         </div>
-
+     
         <div class="form-group">
           <label for="idcard">เลขบัตรประชาชน</label>
           <input type="text" class="form-control" id="idcard" placeholder="x-xxxx-xxx-xx-xx-x" name="idcard" maxlength="13">
         </div>
+     
+     
         <div class="form-row">
 
           <div class="form-group">
@@ -106,6 +108,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <label for="Facebook">Facebook</label>
             <input type="text" class="form-control" id="Facebook" name="face">
           </div>
+
           <div class="form-group col-md-6">
             <label for="email">E-mail(ใช้เพื่อเข้าสู่ระบบ)</label>
             <input type="email" class="form-control" id="email" name="email" placeholder="name@exam.com">
@@ -271,7 +274,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
         </div>
 
-
+        <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="sec">หมูเรียน</label>
+          <input type="text" class="form-control" id="sec" placeholder="xx/xx" name="sec" maxlength="5">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="idstd">รหัสนักศึกษา</label>
+            <input type="text" class="form-control" id="idstd" name="idstd" placeholder="xxx-xxx-xxx" maxlength="9">
+          </div>
+          </div>
         <br><br>
 
         <div align="right">

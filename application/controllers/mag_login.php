@@ -20,13 +20,11 @@ class Mag_login extends CI_Controller
         $this->load->view('footer');
     }
     public function login()
-
     {
-
         if ($this->input->post('login')) {
-            $email = $this->input->post('email');
+            $idstd = $this->input->post('idstd');
             $password = $this->input->post('password');
-            $check = $this->Alumni->check_login($email, $password);
+            $check = $this->Alumni->check_login($idstd, $password);
 
             if ($check['message'] == true) {
                 $array = json_decode(json_encode($check['data']), true);
@@ -51,8 +49,7 @@ class Mag_login extends CI_Controller
     }
     public function list()
     {
-        $data['query'] = $this->Alumni->showlist();
-        // print_r($data);
+        $data['query'] = $this->Alumni->show1();
         $this->load->view('list',$data);
         $this->load->view('footer');
        

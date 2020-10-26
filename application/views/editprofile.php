@@ -42,17 +42,7 @@
             </div>
             <div class="form-row">
 
-                <div class="form-group">
-                    <label for="select-sex">เพศ</label><br>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline1" name="sex" class="custom-control-input" value="ชาย">
-                        <label class="custom-control-label" for="customRadioInline1">ชาย</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline2" name="sex" class="custom-control-input" value="หญิง">
-                        <label class="custom-control-label" for="customRadioInline2">หญิง</label>
-                    </div>
-                </div>
+               <input type="" name="sex" value="<?php echo $this->session->userdata('sex'); ?>" hidden>
 
                 <div class="form-group col-md-4">
                     <label for="date">วัน/เดือน/ปี เกิด</label>
@@ -85,51 +75,148 @@
                 </div>
             </div>
             <p></p>
-            
-            <!-- <div class="container" style="color: blue;">
+            <?php foreach ($query->result_array() as $rs) { ?>
+            <div class="container" style="color: blue;">
                 <h3>ที่อยู่ปัจจุบันที่สามารถติดต่อได้</h3>
             </div><br>
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="House-No">บ้านเลขที่</label>
-                    <input type="text" class="form-control" id="House-No" name="House-No" value="<?php echo $this->session->userdata('House-No'); ?>">
+                    <input type="text" class="form-control" id="House-No" name="House-No" value="<?php echo $rs['House-No']; ?>">
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="Moo-home">หมู่บ้าน</label>
-                    <input type="text" class="form-control" id="Moo-home" name="Moo-home" value="<?php echo $this->session->userdata('Moo-home'); ?>">
+                    <input type="text" class="form-control" id="Moo-home" name="Moo-home" value="<?php echo $rs['Moo-home']; ?>">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="road">ถนน</label>
-                    <input type="text" class="form-control" id="road-home" name="road-home" value="<?php echo $this->session->userdata('road-home'); ?>">
+                    <input type="text" class="form-control" id="road-home" name="road-home" value="<?php echo $rs['road-home']; ?>">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="Province">จังหวัด</label>
-                    <input type="text" class="form-control" id="Province-home" name="Province-home" value="<?php echo $this->session->userdata('Province-home'); ?>">
+                    <input type="text" class="form-control" id="Province-home" name="Province-home" value="<?php echo $rs['Province-home']; ?>">
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="Area">เขต/อำเภอ</label>
-                    <input type="text" class="form-control" id="Area-home" name="Area-home" value="<?php echo $this->session->userdata('Area-home'); ?>">
+                    <input type="text" class="form-control" id="Area-home" name="Area-home" value="<?php echo $rs['Area-home']; ?>">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="Sub-area">แขวง/ตำบล</label>
-                    <input type="text" class="form-control" id="Sub-area-home" name="Sub-area-home" value="<?php echo $this->session->userdata('Sub-area-home'); ?>">
+                    <input type="text" class="form-control" id="Sub-area-home" name="Sub-area-home" value="<?php echo $rs['Sub-area-home']; ?>">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="Postal-Code">รหัสไปรษณีย์</label>
-                    <input type="text" class="form-control" id="Postal-Code-home" name="Postal-Code-home" maxlength="5" value="<?php echo $this->session->userdata('Postal-Code-home'); ?>">
+                    <input type="text" class="form-control" id="Postal-Code-home" name="Postal-Code-home" maxlength="5" value="<?php echo $rs['Postal-Code-home']; ?>">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="Tel-home">เบอร์โทรศัพท์(ถ้ามี)</label>
-                    <input type="text" class="form-control" id="Tel-home" name="Tel-home" placeholder="xx-xxx-xxxx" maxlength="10" value="<?php echo $this->session->userdata('Tel-home'); ?>">
+                    <input type="text" class="form-control" id="Tel-home" name="Tel-home" placeholder="xx-xxx-xxxx" maxlength="10" value="<?php echo $rs['Tel-home']; ?>">
                 </div>
 
-            </div> -->
+            </div>
+            <div class="container" style="color: blue;">
+          <h3>ที่อยู่สถานที่ทำงาน</h3>
+        </div><br>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="Work-No">บ้านเลขที่</label>
+            <input type="text" class="form-control" id="Work-No" name="Work-No" value="<?php echo $rs['Work-No']; ?>">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="Work-Moo">หมู่บ้าน</label>
+            <input type="text" class="form-control" id="Moo-work" name="Moo-work"  value="<?php echo $rs['Moo-work']; ?>">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="Work-road">ถนน</label>
+            <input type="text" class="form-control" id="road-work" name="road-work"  value="<?php echo $rs['road-work']; ?>">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="Work-Province">จังหวัด</label>
+            <input type="text" class="form-control" id="Province-work" name="Province-work"  value="<?php echo $rs['Province-work']; ?>">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="Work-Area">เขต/อำเภอ</label>
+            <input type="text" class="form-control" id="Area-work" name="Area-work"  value="<?php echo $rs['Area-work']; ?>">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="Work-Sub-area">แขวง/ตำบล</label>
+            <input type="text" class="form-control" id="Sub-area-work" name="Sub-area-work"  value="<?php echo $rs['Sub-area-work']; ?>">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Work-Postal Code">รหัสไปรษณีย์</label>
+            <input type="text" class="form-control" id="Postal-Code-work" name="Postal-Code-work" maxlength="5"  value="<?php echo $rs['Postal-Code-work']; ?>">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Tel-work">เบอร์โทรศัพท์(ถ้ามี)</label>
+            <input type="text" class="form-control" id="Tel-work" name="Tel-work" placeholder="xx-xxx-xxxx" maxlength="10"  value="<?php echo $rs['Tel-work']; ?>">
+          </div>
+        </div>
+        <br>
+        <div class="booder">
+        </div>
+        <br>
+
+        <div class="container" style="color: blue;">
+          <h3>ข้อมูลศิษย์เก่า</h3>
+        </div><br>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="attend">ปีที่เข้ารับการศึกษา (พ.ศ.)</label>
+            <!--  <input type="text" class="form-control" id="attend" name="attend" maxlength="4"> -->
+            <select id="attend" class="form-control" name="attend" >
+              <option selected><?php echo $rs['attend']; ?></option>
+              <option value="2553">2553</option>
+              <option value="2554">2554</option>
+              <option value="2555">2555</option>
+              <option value="2556">2556</option>
+              <option value="2557">2567</option>
+              <option value="2558">2558</option>
+              <option value="2559">2559</option>
+
+            </select>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="finish">ปีที่จบการศึกษา (พ.ศ.)</label>
+            <!--    <input type="text" class="form-control" id="finish"name="finish"maxlength="4"> -->
+            <select id="finish" class="form-control" name="finish" >
+              <option selected><?php echo $rs['finish']; ?></option>
+              <option value="2556">2556</option>
+              <option value="2557">2557</option>
+              <option value="2558">2558</option>
+              <option value="2559">2559</option>
+              <option value="2560">2560</option>
+              <option value="2561">2561</option>
+              <option value="2562">2562</option>
+
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="sec">หมูเรียน</label>
+          <input type="text" class="form-control" id="sec" placeholder="xx/xx" name="sec" maxlength="5"  value="<?php echo $rs['sec']; ?>">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="idstd">รหัสนักศึกษา</label>
+            <input type="text" class="form-control" id="idstd" name="idstd" placeholder="xxx-xxx-xxx" maxlength="9"  value="<?php echo $rs['idstd']; ?>">
+          </div>
+          </div>
+        <br><br>
+            <?php } ?>
             <br> <br>
                 <input type="hidden" name="a_id" value="<?php echo $this->session->userdata('a_id'); ?>">
             <div class="container">

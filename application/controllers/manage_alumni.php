@@ -26,6 +26,8 @@ class Manage_alumni extends CI_Controller {
 			'fname' => $this->input->post("fname"),
 			'lname' => $this->input->post("lname"),
 			'idcard'=> $this->input->post("idcard"),
+			'idstd'=> $this->input->post("idstd"),
+			'sec'=> $this->input->post("sec"),
 			'sex'=> $this->input->post("sex"),
 			'date'=> $this->input->post("date"),
 			'job'=> $this->input->post("job"),
@@ -81,30 +83,57 @@ class Manage_alumni extends CI_Controller {
 
 
 	public function edit_alumni(){
-		// $config['upload_path'] = './img/';
-		// $config['allowed_types'] = 'gif|jpg|png';
-		// $data1 = $this->input->post('image');
-		// $filename = $data1['file_name'];
 		$data = array(
-			
+			'title' => $this->input->post("title"),
 			'fname' => $this->input->post("fname"),
 			'lname' => $this->input->post("lname"),
 			'idcard'=> $this->input->post("idcard"),
+			'idstd'=> $this->input->post("idstd"),
+			'sec'=> $this->input->post("sec"),
+			'sex'=> $this->input->post("sex"),
 			'date'=> $this->input->post("date"),
 			'job'=> $this->input->post("job"),
 			'tel'=> $this->input->post("tel"),
 			'face'=> $this->input->post("face"),
 			'email'=> $this->input->post("email"),
 			'password'=> $this->input->post("password")
-		
+		);
+		$data2 = array(
+			'House-No' => $this->input->post("House-No"),
+			'Moo-home' => $this->input->post("Moo-home"),
+			'road-home' => $this->input->post("road-home"),
+			'Province-home' => $this->input->post("Province-home"),
+			'Area-home' => $this->input->post("Area-home"),
+			'Sub-area-home' => $this->input->post("Sub-area-home"),
+			'Postal-Code-home' => $this->input->post("Postal-Code-home"),
+			'Tel-home' => $this->input->post("Tel-home")
+		);
+		$data3 = array(
+			'Work-No' => $this->input->post("Work-No"),
+			'Moo-work' => $this->input->post("Moo-work"),
+			'road-work' => $this->input->post("road-work"),
+			'Province-work' => $this->input->post("Province-work"),
+			'Area-work' => $this->input->post("Area-work"),
+			'Sub-area-work' => $this->input->post("Sub-area-work"),
+			'Postal-Code-work' => $this->input->post("Postal-Code-work"),
+			'Tel-work' => $this->input->post("Tel-work")
+		);
+		$data4 = array(
+			'attend' => $this->input->post("attend"),
+			'finish' => $this->input->post("finish")
 		);
 		
 	   
 		$a_id= $this->input->post("a_id");
-		$this->session->set_userdata($data);
+		$this->session->set_userdata($data,$data2,$data3,$data4);
 		$this->Alumni->alumni_update_info($data,$a_id);
+		$this->Alumni->alumni_update_home($data2,$a_id);
+		$this->Alumni->alumni_update_work($data3,$a_id);
+		$this->Alumni->alumni_update_year($data4,$a_id);
 		redirect('Welcome/profile');
 	}
+
+	
 	public function listbef()
     {
 		$data['query'] = $this->Alumni->showlist();

@@ -40,6 +40,7 @@
             <p class="card-text">งาน : <?php echo $this->session->userdata('job'); ?></p>
             <p class="card-text">เบอร์โทรศัพท์ : <?php echo $this->session->userdata('tel'); ?></p>
             <?php foreach ($query->result_array() as $rs) { ?>
+            
             <p class="card-text">ปีที่เข้ารับการศึกษา : <td><?php echo $rs['attend']; ?></p>
             <p class="card-text">ปีเข้าที่จบการศึกษา : <td><?php echo $rs['finish']; ?></p>
             <?php } ?>

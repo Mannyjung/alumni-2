@@ -26,10 +26,10 @@ class Alumni_model extends CI_Model
 	{
 		$this->db->insert('year', $data4);
 	}
-	function check_login($email, $password)
+	function check_login($idstd, $password)
 	{
 		// $this->db->select('email,password');
-		$this->db->where('email', $email);
+		$this->db->where('idstd', $idstd);
 		$this->db->where('password', $password);
 		$result = $this->db->get('info');
 		$message = '';
@@ -53,6 +53,18 @@ class Alumni_model extends CI_Model
 	$this->db->where('a_id', $a_id);
 	$this->db->update('info', $data);
   }
+  function alumni_update_home($data2,$a_id){
+	$this->db->where('a_id', $a_id);
+	$this->db->update('addr_home', $data2);
+  }
+  function alumni_update_work($data3,$a_id){
+	$this->db->where('a_id', $a_id);
+	$this->db->update('addr_work', $data3);
+  }
+  function alumni_update_year($data4,$a_id){
+	$this->db->where('a_id', $a_id);
+	$this->db->update('year', $data4);
+  }
 
 
 	function showone($a_id)
@@ -60,6 +72,8 @@ class Alumni_model extends CI_Model
 		$result =	$this->db->select('*')
 			->from('info')
 			->join('year','year.a_id = info.a_id')
+			->join('addr_home','addr_home.a_id = info.a_id')
+			->join('addr_work','addr_work.a_id = info.a_id')
 			->where('info.a_id',$a_id)
 			->get();
 			return $result;
