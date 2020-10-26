@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 14, 2020 at 02:55 PM
+-- Generation Time: Oct 26, 2020 at 11:51 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -48,7 +48,11 @@ INSERT INTO `addr_home` (`a_id`, `House-No`, `Moo-home`, `road-home`, `Province-
 (3, '31', '8', '-', 'นครปฐม', 'กำแพงแสน', 'สระสี่มุม', '73140', '-'),
 (4, '34', '2', '-', 'นครปฐม', 'เมือง', 'สระกระเทียม', '73000', '-'),
 (5, '13', '9', '-', 'ราชบุรี', 'โพธาราม', 'ท่าชุมพล', '70120', '-'),
-(6, '31', '8', '-', 'นครปฐม', 'กำแพงแสน', 'สระสี่มุม', '73140', '-');
+(6, '31', '8', '-', 'นครปฐม', 'กำแพงแสน', 'สระสี่มุม', '73140', '-'),
+(7, '52', '1', '-', 'นครปฐม', 'กำแพงแสน', 'กำแพงแสน', '73100', '0980733220'),
+(8, '52', '1', '-', 'นครปฐม', 'กำแพงแสน', 'กำแพงแสน', '73100', '0980733220'),
+(9, '25', '15', '-', 'ราชบุรี', 'เมือง', 'ดอนเร่', '70000', '0980754413'),
+(10, '25', '15', '-', 'ราชบุรี', 'เมือง', 'ดอนเร่', '70000', '0980754413');
 
 -- --------------------------------------------------------
 
@@ -76,7 +80,11 @@ INSERT INTO `addr_work` (`a_id`, `Work-No`, `Moo-work`, `road-work`, `Province-w
 (3, '86', '9', '-', 'นครปฐม', 'กำแพงแสน', 'กำแพงแสน', '73140', '-'),
 (4, '34', '9', '-', 'นครปฐม', 'กำแพงแสน', 'กำแพงแสน', '73140', '-'),
 (5, '13', '9', '-', 'ราชบุรี', 'โพธาราม', 'ท่าชุมพล', '70120', '-'),
-(6, '31', '8', '-', 'นครปฐม', 'โพธาราม', 'ท่าชุมพล', '70120', '-');
+(6, '31', '8', '-', 'นครปฐม', 'โพธาราม', 'ท่าชุมพล', '70120', '-'),
+(7, '23', '3', '-', 'นครปฐม', 'เมือง', 'พระปฐม', '73000', '0985523263'),
+(8, '23', '3', '-', 'นครปฐม', 'เมือง', 'พระปฐม', '73000', '0985523263'),
+(9, '23', '3', '-', 'ราชบุรี', 'เมือง', 'ดอนเร่', '71000', '0985523263'),
+(10, '23', '3', '-', 'ราชบุรี', 'เมือง', 'ดอนเร่', '71000', '0985523263');
 
 -- --------------------------------------------------------
 
@@ -90,6 +98,8 @@ CREATE TABLE `info` (
   `fname` varchar(60) NOT NULL,
   `lname` varchar(60) NOT NULL,
   `idcard` char(13) NOT NULL,
+  `idstd` varchar(9) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `sec` varchar(5) NOT NULL,
   `sex` varchar(10) NOT NULL,
   `date` date NOT NULL,
   `job` varchar(100) NOT NULL,
@@ -104,11 +114,15 @@ CREATE TABLE `info` (
 -- Dumping data for table `info`
 --
 
-INSERT INTO `info` (`a_id`, `title`, `fname`, `lname`, `idcard`, `sex`, `date`, `job`, `tel`, `face`, `email`, `password`, `image`) VALUES
-(3, 'นาย', 'เมืองแมน', 'สระทองจีน', '1730201354430', 'ชาย', '2000-03-31', 'นักศึกษา', '0972745063', 'Mannyjung', 'srathongjeenm@gmail.com', 'muangman63', 'm1.jpg'),
-(4, 'นาย', 'ศิวกร', 'รามเรือง', '1732035632153', 'ชาย', '1999-07-07', 'นักศึกษา', '0993896785', 'Siwakorn Ram', 'siwa@gmail.com', '123456', 'k1.jpg'),
-(5, 'นาย', 'ธนกต', 'ตินพ', '1730201563621', 'ชาย', '2000-02-07', 'นักศึกษา', '0659216799', 'Thanakit', 'Thanakit@gmail.com', '123456', 't1.jpg'),
-(6, 'นาย', 'ธันวา', 'กุณทะมุณี', '1730203623456', 'ชาย', '2000-03-31', 'นักศึกษา', '0956362232', 'Tanva', 'Tanva636@gmail.com', '123456', 'j1.jpg');
+INSERT INTO `info` (`a_id`, `title`, `fname`, `lname`, `idcard`, `idstd`, `sec`, `sex`, `date`, `job`, `tel`, `face`, `email`, `password`, `image`) VALUES
+(3, 'นาย', 'เมืองแมน', 'สระทองจีน', '1730201354430', '614259041', '61/47', 'ชาย', '2000-03-31', 'นักศึกษา', '0972745063', 'Mannyjung Eiei', 'srathongjeenm@gmail.com', '123456', 'm1.jpg'),
+(4, 'นาย', 'ศิวกร', 'รามเรือง', '1730201230215', '614259048', '61/47', 'ชาย', '1999-07-07', 'นักศึกษา', '0993896785', 'Siwakorn Ram', 'siwa@gmail.com', '123456', 'k1.jpg'),
+(5, 'นาย', 'ธนกต', 'ตินพ', '1523023698745', '614259034', '61/47', 'ชาย', '2000-02-07', 'นักศึกษา', '0659216799', 'Thanakit', 'Thanakit@gmail.com', '123456', 't1.jpg'),
+(6, 'นาย', 'ธันวา', 'กุณทะมุณี', '1730203623456', '614259037', '61/47', 'ชาย', '2000-03-31', 'นักศึกษา', '0956362232', 'Tanva', 'Tanva636@gmail.com', '123456', 'j1.jpg'),
+(7, 'นาย', 'ดิเรก', 'สุขสรร', '1300312363021', '614259033', '61/63', 'ชาย', '1999-12-03', 'Developer', '0952315630', 'Dirak suksas', 'Dirak@gmail.com', '123456', 'h1.jpg'),
+(8, 'นาย', 'ธนพล', 'ใจตรง', '1523021362533', '614259012', '61/58', 'ชาย', '1999-12-03', 'Developer', '0952315630', 'Thanaphon Jaitong', 'thanaphon6@gmail.com', '123456', 'q1.jpg'),
+(9, 'นางสาว', 'ศศิกา', 'กกทอง', '1300312465333', '551259033', '55/63', 'หญิง', '2002-11-21', 'นักศึกษา', '0952315454', 'Sasika Kokthong', 'sasika@gmail.com', '123456', 'g1.jpg'),
+(10, 'นางสาว', 'ณัฐณิชา', 'ปั่นเปี่ยมทอง', '1730236531563', '614259012', '61/47', 'หญิง', '1999-05-14', 'นักศึกษา', '0952315454', 'Natthanicha', 'nattha@gmail.com', '123456', 'to1.jpg');
 
 -- --------------------------------------------------------
 
@@ -130,7 +144,11 @@ INSERT INTO `year` (`a_id`, `attend`, `finish`) VALUES
 (3, '2561', '2564'),
 (4, '2561', '2564'),
 (5, '2559', '2562'),
-(6, '2556', '2561');
+(6, '2556', '2561'),
+(7, '2554', '2561'),
+(8, '2554', '2561'),
+(9, '2555', '2560'),
+(10, '2555', '2560');
 
 --
 -- Indexes for dumped tables
@@ -168,25 +186,25 @@ ALTER TABLE `year`
 -- AUTO_INCREMENT for table `addr_home`
 --
 ALTER TABLE `addr_home`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `addr_work`
 --
 ALTER TABLE `addr_work`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `info`
 --
 ALTER TABLE `info`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `year`
 --
 ALTER TABLE `year`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
