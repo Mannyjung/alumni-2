@@ -12,13 +12,13 @@ class Search_mo extends CI_Model {
         $this->db->or_like('sec',$key);
         $this->db->or_like('attend',$key);
         $this->db->or_like('Province-work',$key);
-        // $this->db->or_like('year'.".".'finish',$key);
+        
         $this->db->join('year', 'year.a_id = info.a_id');
         $this->db->join('addr_work', 'addr_work.a_id = info.a_id');
 
         $result = $this->db->get('info');
         
-        return $result;
+        return $result;      
  
   
     }
