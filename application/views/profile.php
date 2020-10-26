@@ -28,7 +28,7 @@
         <div class="row">
         
           <div class="col-4">
-            <img src="<?php echo base_url('upload'); ?>/<?php echo $this->session->userdata('image'); ?>" alt="" width="180px" height="180px">
+            <img src="<?php echo base_url('upload'); ?>/<?php echo $this->session->userdata('upload'); ?>" alt="" width="180px" height="180px">
           </div>
           <div class="col-8">
             <h5 class="card-title">ชื่อ :<?php echo $this->session->userdata('title') . ' ' . $this->session->userdata('fname') . ' ' . $this->session->userdata('lname'); ?> </h5>

@@ -15,7 +15,7 @@
           <div class="row">
 
             <div class="col-4">
-              <img src="<?php echo base_url('upload'); ?>/<?php echo $rs['image']; ?>" alt="" width="200px" height="230px">
+              <img src="<?php echo base_url('upload'); ?>/<?php echo $rs['upload']; ?>" alt="" width="200px" height="230px">
             </div>
 
             <div class="col-8">
