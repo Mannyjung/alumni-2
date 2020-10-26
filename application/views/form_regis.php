@@ -119,24 +119,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
         </div>
         <p></p>
-        <!--   <div class="form-group">
-      <label for="upphoto">รูปภาพ(ท่าน)</label>
-      <input type="file"  name="image" >
-    </div> -->
-
-        <div class="row">
-          <div class="col-1.5">
-            test test pic
-            <label for="upphoto">รูปภาพ(ท่าน)</label>
-          </div>
+          <div class="form-group">
           <div class="col-6">
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" name="image" required accept="image/*">
-              <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
-            </div>
-          </div>
-        </div>
-        <br> <br>
+          <div class="custom-file">
+          <label class="custom-file-label" for="upphoto">รูปภาพ(ท่าน)</label>
+          <input type="file" class="custom-file-input" name="upload" required accept="image/*">
+         </div>
+         </div>
+         </div>
+
 
         <div class="booder">
         </div>

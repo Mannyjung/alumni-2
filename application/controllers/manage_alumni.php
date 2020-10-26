@@ -20,6 +20,14 @@ class Manage_alumni extends CI_Controller {
 		// $config['allowed_types'] = 'gif|jpg|png';
 		// $data1 = $this->input->post('image');
 		// $filename = $data1['file_name'];
+		$config['upload_path']   = './upload/'; //Folder สำหรับ เก็บ ไฟล์ที่  Upload
+		$config['allowed_types'] = 'gif|jpg|png'; //รูปแบบไฟล์ที่ อนุญาตให้ Upload ได้
+		//$config['max_size']      = 100; //ขนาดไฟล์สูงสุดที่ Upload ได้ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+		//$config['max_width']     = 1024; //ขนาดความกว้างสูงสุด (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+		//$config['max_height']    = 768;  //ขนาดความสูงสูงสดุ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+		$config['encrypt_name']  = true; //กำหนดเป็น true ให้ระบบ เปลียนชื่อ ไฟล์  อัตโนมัติ  ป้องกันกรณีชื่อไฟล์ซ้ำกัน
+		$this->load->library('upload', $config);
+		$this->upload->do_upload('upload');
 		$data = array(
 			'a_id' => $this->input->post("a_id"),
 			'title' => $this->input->post("title"),
@@ -34,7 +42,8 @@ class Manage_alumni extends CI_Controller {
 			'tel'=> $this->input->post("tel"),
 			'face'=> $this->input->post("face"),
 			'email'=> $this->input->post("email"),
-			'password'=> $this->input->post("password")
+			'password'=> $this->input->post("password"),
+			'upload' => $this->upload->data("file_name")
 		
 		);
 		$data2 = array(
@@ -83,6 +92,7 @@ class Manage_alumni extends CI_Controller {
 
 
 	public function edit_alumni(){
+		
 		$data = array(
 			'title' => $this->input->post("title"),
 			'fname' => $this->input->post("fname"),
@@ -96,7 +106,8 @@ class Manage_alumni extends CI_Controller {
 			'tel'=> $this->input->post("tel"),
 			'face'=> $this->input->post("face"),
 			'email'=> $this->input->post("email"),
-			'password'=> $this->input->post("password")
+			'password'=> $this->input->post("password"),
+		
 		);
 		$data2 = array(
 			'House-No' => $this->input->post("House-No"),
